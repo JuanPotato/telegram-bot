@@ -9,14 +9,14 @@ local function getEURUSD(usd)
   local rate = rates[3]
   local text = symbol
   if usd then
-    local eur = tonumber(usd) / tonumber(rate)
-    text = usd.."USD = "..eur.."EUR"
+    local eur = tonumber(usd) * tonumber(rate)
+    text = usd.."EUR = "..eur.."USD"
   end
   return text
 end
 
 local function run(msg, matches)
-  if matches[1] == "!eur" then
+  if matches[1] == "!usd" then
     return getEURUSD(nil)
   end
   return getEURUSD(matches[1])
@@ -24,10 +24,10 @@ end
 
 return {
     description = "Real-time EURUSD market price", 
-    usage = "!eur [USD]",
+    usage = "!usd [EUR]",
     patterns = {
-      "^!eur$",
-      "^!eur (%d+[%d%.]*)$",
+      "^!usd$",
+      "^!usd (%d+[%d%.]*)$",
     }, 
     run = run 
 }
