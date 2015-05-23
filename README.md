@@ -32,11 +32,6 @@ Bot Commands
       <td>!9gag: Send random image from 9gag</td>
     </tr>
     <tr>
-      <td>boobs.lua</td>
-      <td>Gets a random boobs or butts pic</td>
-      <td>!boobs: Get a boobs NSFW image. :underage:<br>!butts: Get a butts NSFW image. :underage:<br></td>
-    </tr>
-    <tr>
       <td>btc.lua</td>
       <td>Bitcoin global average market value (in EUR or USD)</td>
       <td>!btc [EUR|USD] [amount]</td>
@@ -55,11 +50,6 @@ Bot Commands
       <td>channels.lua</td>
       <td>Plugin to manage channels. Enable or disable channel.</td>
       <td>!channel enable: enable current channel<br>!channel disable: disable current channel<br></td>
-    </tr>
-    <tr>
-      <td>danbooru.lua</td>
-      <td>Gets a random fresh or popular image from Danbooru</td>
-      <td>!danbooru - gets a random fresh image from Danbooru :underage:<br>!danboorud - random daily popular image :underage:<br>!danbooruw - random weekly popular image :underage:<br>!danboorum - random monthly popular image :underage:<br></td>
     </tr>
     <tr>
       <td>dogify.lua</td>
