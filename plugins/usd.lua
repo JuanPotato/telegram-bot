@@ -6,14 +6,11 @@ local function getEURUSD(usd)
   local url = 'http://webrates.truefx.com/rates/connect.html?c=EUR/USD&f=csv&s=n'
   local res,code = http.request(url)
   local rates = res:split(", ")
-  local symbol = rates[1]
-  local timestamp = rates[2]
-  local sell = rates[3]..rates[4]
-  local buy = rates[5]..rates[6] 
-  local text = symbol..'\n'..'Buy: '..buy..'\n'..'Sell: '..sell
+  local rate = rates[3]
+  local text = symbol
   if usd then
-    local eur = tonumber(usd) / tonumber(buy)
-    text = text.."\n "..usd.."USD = "..eur.."EUR"
+    local eur = tonumber(usd) / tonumber(rate)
+    text = usd.."USD = "..eur.."EUR"
   end
   return text
 end
