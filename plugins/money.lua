@@ -16,7 +16,7 @@ local function getCur(from, to, amount)
 end
 
 local function run(msg, matches)
-  return getCur(matches[1], matches[2], matches[3])
+  return getCur(matches[1], matches[3], matches[2])
 end
 
 return {
