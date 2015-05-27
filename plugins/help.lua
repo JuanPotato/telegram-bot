@@ -48,18 +48,26 @@ end
 
 local function run(msg, matches)
   if matches[1] == "!help" then
-    return telegram_help()
+    if msg.to.type == 'chat' then
+	send_msg('chat#id' .. msg.to.id, 'Whale then, i sent you some help.', ok_cb, false)
+    end
+	send_msg('user#id' .. msg.from.id, telegram_help(), ok_cb, false)
+    return ""
   elseif matches[1] == "!help all" then
-    return help_all()
+    if msg.to.type == 'chat' then
+	send_msg('chat#id' .. msg.to.id, 'Whale then, i sent you some help.', ok_cb, false)
+    end
+	send_msg('user#id' .. msg.from.id, help_all(), ok_cb, false)
+    return ""
   else 
     local text = plugin_help(matches[1])
     if not text then
       text = telegram_help()
     end
-	  if msg.to.type == 'chat' then
-	  	send_msg('chat#id' .. msg.to.id, 'I have pmmed you the help', ok_cb, false)
-	  end
-	  send_msg('user#id' .. msg.from.id, text, ok_cb, false)
+    if msg.to.type == 'chat' then
+	send_msg('chat#id' .. msg.to.id, 'I have pmmed you the help', ok_cb, false)
+    end
+	send_msg('user#id' .. msg.from.id, text, ok_cb, false)
     return ""
   end
 end
