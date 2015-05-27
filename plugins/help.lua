@@ -56,7 +56,11 @@ local function run(msg, matches)
     if not text then
       text = telegram_help()
     end
-    return text
+	  if msg.to.type == 'chat' then
+	  	send_msg('chat#id' .. msg.to.id, 'I have pmmed you the help', ok_cb, false)
+	  end
+	  send_msg('user#id' .. msg.from.id, text, ok_cb, false)
+    return ""
   end
 end
 
